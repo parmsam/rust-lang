@@ -1,3 +1,2 @@
-# ignore all target folders
-target/
-# ignore build folder
+# ignore folders named target
+**/target/*
