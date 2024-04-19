@@ -1,0 +1,93 @@
+---
+title: "03-concepts"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+# General
+
+## Immutability
+
+- When a variable is immutable, once a value is bound to a name, you can’t change that value.
+
+```{rust}
+fn main() {
+    let x = 5;
+    println!("The value of x is: {x}");
+    x = 6; // error: cannot assign twice to immutable variable
+    println!("The value of x is: {x}");
+}
+```
+
+- We get compile-time errors when we attempt to change a value that’s designated as immutable because this very situation can lead to bugs.
+- The Rust compiler guarantees that when you state that a value won’t change, it really won’t change, so you don’t have to keep track of it yourself
+
+## Mutability
+
+- Although variables are immutable by default, you can make them mutable by adding `mut` in front of the variable name.
+
+```{rust}
+fn main() {
+    let mut x = 5;
+    println!("The value of x is: {x}");
+    x = 6;
+    println!("The value of x is: {x}");
+}
+```
+
+## Constants
+
+- Constants are values that are bound to a name and are not allowed to change.
+- You aren’t allowed to use mut with constants. Constants aren’t just immutable by default—they’re always immutable.
+- You declare constants using the const keyword instead of the let keyword, and the type of the value must be annotated.
+
+```{rust}
+const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+```
+
+- Constants can be declared in any scope. Constants may be set only to a constant expression, not the result of a value that could only be computed at runtime.
+- Rust’s naming convention for constants is to use all uppercase with underscores between words.
+
+## Shadowing
+
+- Rustaceans say that the first variable is shadowed by the second, which means that the second variable is what the compiler will see when you use the name of the variable.
+- The second variable overshadows the first, taking any uses of the variable name to itself until either it itself is shadowed or the scope ends.
+- We’re effectively creating a new variable when we use the let keyword again, we can change the type of the value but reuse the same name.
+- It works across types, so we can change the type of the value but reuse the same name. This is unlike using let mut, which would have resulted in a compile-time error.
+
+```{rust}
+fn main() {
+    let x = 5;
+
+    let x = x + 1;
+
+    {
+        let x = x * 2;
+        println!("The value of x in the inner scope is: {x}");
+    }
+
+    println!("The value of x is: {x}");
+    let spaces = "   ";
+    let spaces = spaces.len();
+    println!("The value of spaces is: {spaces}");
+}
+```
+
+## Data types
+
+- Rust is a statically typed language, which means that it must know the types of all variables at compile time.
+
+
+```{rust}
+
+```
+
+### Scaler types
+
+-  A scalar type represents a single value.
+- Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
+  - An integer is a number without a fractional component. Here's a table of the different integer types provided by Rust:
+    - Length: 8-bit, 16-bit, 32-bit, 64-bit, 128-bit, arch
+    - Signed: i8, i16, i32, i64, i128, isize
+    - Unsigned: u8, u16, u32, u64, u128, usize
