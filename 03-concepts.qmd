@@ -3,9 +3,12 @@ title: "03-concepts"
 format: html
 editor_options: 
   chunk_output_type: console
+execute:
+  eval: false
+params: 
+  url1: "https://doc.rust-lang.org/book/ch03-02-data-types.html"
+  url2: "https://rust-book.cs.brown.edu/ch03-00-common-programming-concepts.html"
 ---
-
-# General
 
 ## Immutability
 
