@@ -91,3 +91,16 @@ fn main() {
     - Length: 8-bit, 16-bit, 32-bit, 64-bit, 128-bit, arch
     - Signed: i8, i16, i32, i64, i128, isize
     - Unsigned: u8, u16, u32, u64, u128, usize
+
+### Signed and unsigned integers
+ 
+- Signed and unsigned refer to whether it’s possible for the number to be negative.
+- In other words, whether the number needs to have a sign with it (signed) or whether it will only ever be positive and can therefore be represented without a sign (unsigned).
+- Each signed variant can store numbers from $-(2^{n - 1})$ to $2^{n-1}-1$ inclusive, where n is the number of bits that variant uses
+  - So an i8 can store numbers from $-128$ to $127$ inclusive.
+- Unsigned variants can store numbers from 0 to $2^{n - 1}$.
+  - So a u8 can store numbers from 0 to 255.
+- The usize and isize types depend on the architecture of the computer your program is running on. 
+  - It is denoted in the table as “arch”: 
+  - 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture.
+
