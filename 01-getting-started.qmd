@@ -1,5 +1,5 @@
 ---
-title: "01-"
+title: "01-getting-started"
 format: html
 editor_options: 
   chunk_output_type: console
@@ -8,3 +8,67 @@ params:
   url2: https://rust-book.cs.brown.edu/
 ---
 
+## Rust commands
+
+- Check the version of Rust installed on your system.
+```{bash}
+rustc --version
+```
+
+- Update to a newly released version of Rust.
+
+```{bash}
+rustup update
+```
+
+## Rust programs
+
+- Use the `.rs` extension for Rust programs.
+- Example `main.rs` file:
+```{rust}
+// Define the main function
+fn main() {
+  // Print the message "Hello, world!" using the println! macro
+  println!("Hello, world!");
+} 
+```
+- Compile the program using `rustc main.rs`, where `main.rs` is the name of the file. You can then run it using `./main`.
+- Rust is an ahead of time compiled language, which means you can compile a Rust program into a binary executable that can run on its own without needing Rust instaled.
+
+## Cargo
+
+- Cargo is the Rust package manager and build system.
+- Rust programmers use it to manage their Rust projects. Use `cargo --version` in the terminal to check the version of Cargo installed on your system.
+- You can create a new Rust project using `cargo new project_name`, where `project_name` is the name of your project.
+
+### Cargo TOML
+
+- The `Cargo.toml` file is the configuration file for a Rust project.
+- TOML stands for Tom's Obvious, Minimal Language.
+- Example `Cargo.toml` file:
+```{toml}
+[package]
+name = "hello_cargo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+```
+
+## Cargo organization
+
+- Code files live in the `src` directory.
+- The top level directory contains the `Cargo.toml`, README file, license file, and anything else not related to the source code.
+
+## Build Cargo project
+
+- You can build a Cargo project using `cargo build`.
+- Alternatively, you can build and run the executable using `cargo run` all in one step.
+- Also you can run `cargo check` to check if the code compiles without producing an executable. This is useful b/c it's much faster than `cargo build`. Meaning you can run it more frequently to check for errors.
+
+## Building a Cargo project for release
+
+- When the project is ready for release you run `cargo build --release` to compile the project with optimizations. That will put the executable in a different directory `target/release` instead of `target/debug`.
+- Note that cargo doesn't save the compiled binary in same directory as your code. Instead it saves it in the `target/debug` directory.

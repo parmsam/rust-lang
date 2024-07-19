@@ -4,7 +4,7 @@ use rand::Rng;
 
 fn main() {
     // Inform user about the game
-    println!("Guess the number!");
+    println!("Guess the number between 1 and 100!");
     // Mention how to quit the game on same line as previous print
     println!("Type 'quit' or 'exit' to quit the game.");
     // Generate a random number between 1 and 100

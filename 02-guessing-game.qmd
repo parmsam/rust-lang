@@ -1,0 +1,11 @@
+---
+title: "02-guessing-game"
+format: html
+editor_options: 
+  chunk_output_type: console
+params:
+  url1: https://doc.rust-lang.org/book/
+  url2: https://rust-book.cs.brown.edu/
+---
+
+See book chapter for more details: [The Rust Programming Language](https://doc.rust-lang.org/book/)
