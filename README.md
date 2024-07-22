@@ -12,3 +12,6 @@ My notes and code snippets from the book "The Rust Programming Language, 2nd Edi
 - [x] Ch 02 - Programming a Guessing Game
 - [x] Ch 03 -  Common Programming Concepts
 - [ ] Ch 04 - Understanding Ownership
+- [ ] Ch 05 - Using Structs to Structure Related Data
+- [ ] Ch 06 - Enums and Pattern Matching
+- [ ] Ch 13 - Function Language Features: Iterators and Closures
