@@ -26,6 +26,7 @@ fn main() {
     println!("This program helps convert between Fahrenheit and Celsius temperatures.");
     println!("Type c for Celsius or f for Fahrenheit, followed by the temperature value.");
     println!("For example, 'c 32' converts 32 degrees Celsius to Fahrenheit.");
+    println!("Type 'quit' or 'exit' to quit the tool.");
     loop {
         println!("Please enter the temperature units and value you'd like to convert:");
         // initialize i64 variable to store temperature value
@@ -35,6 +36,11 @@ fn main() {
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line");
+
+        if guess.trim() == "quit" || guess.trim() == "exit" {
+            println!("Quitting temperature conversion tool...");
+            break;
+        }
 
         // split the input into a vector of strings
         let temp_input: Vec<&str> = guess.trim().split_whitespace().collect();
