@@ -1,0 +1,12 @@
+---
+title: "04-understanding-ownership"
+format: html
+editor_options: 
+  chunk_output_type: console
+params:
+  url1: https://doc.rust-lang.org/book/
+  url2: https://rust-book.cs.brown.edu/
+---
+
+## 
+
